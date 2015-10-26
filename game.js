@@ -1,9 +1,7 @@
-// var userInput = prompt("Do you wish to take a Rock, some Paper or a Pair of Scissors into battle?");
-var userChoice = "paper";
-
-// var userChoice = userInput.toLowerCase();
+var userInput = prompt("Do you wish to take a Rock, some Paper or a Pair of Scissors into battle?");
+// var userChoice = "paper"; for testing purposes
+var userChoice = userInput.toLowerCase();
 var computerChoice = Math.random();
-console.log(computerChoice);
 
 if(computerChoice < 0.34) {
   computerChoice = "Rock!";
@@ -16,6 +14,7 @@ else if(computerChoice >= 0.67) {
 else {
   computerChoice = "Paper!";
 }
+console.log(computerChoice);
 
 var compare = function(userChoice, computerChoice) {
   console.log("compare");
