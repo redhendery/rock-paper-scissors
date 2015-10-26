@@ -1,12 +1,15 @@
-var userInput = prompt("Do you wish to take a Rock, some Paper or a Pair of Scissors into battle?");
-var userChoice = userInput.toLowerCase();
-computerChoice = Math.random();
+// var userInput = prompt("Do you wish to take a Rock, some Paper or a Pair of Scissors into battle?");
+var userChoice = "paper";
 
-if (computerChoice < 0.34) {
+// var userChoice = userInput.toLowerCase();
+var computerChoice = Math.random();
+console.log(computerChoice);
+
+if(computerChoice < 0.34) {
   computerChoice = "Rock!";
 }
 
-elseif (computerChoice >= 0.67) {
+else if(computerChoice >= 0.67) {
   computerChoice = "Scissors!";
 }
 
@@ -15,11 +18,12 @@ else {
 }
 
 var compare = function(userChoice, computerChoice) {
+  console.log("compare");
   if (userChoice === computerChoice) {
     return "It is a tie!!!"
   }
 
-  elseif (userChoice === "rock") {
+  else if(userChoice === "rock") {
     if(computerChoice === "scissors") {
       return "Rock wins for you! This time..."
     }
@@ -28,7 +32,7 @@ var compare = function(userChoice, computerChoice) {
     }
   }
 
-  elseif (userChoice === "paper") {
+  else if(userChoice === "paper") {
     if(computerChoice === "rock") {
       return "Paper wins for you! This time..."
     }
@@ -37,7 +41,7 @@ var compare = function(userChoice, computerChoice) {
     }
   }
 
-  elseif (userChoice === "scissors") {
+  else if(userChoice === "scissors") {
     if(computerChoice === "paper") {
       return "Paper wins for you! This time..."
     }
@@ -45,8 +49,6 @@ var compare = function(userChoice, computerChoice) {
       return "Rock wins! You will never defeat technology pitiful human!"
     }
   }
-
-}
 }
 
-compare(userChoice, computerChoice)
+console.log(compare(userChoice,computerChoice));
