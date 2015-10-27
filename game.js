@@ -3,28 +3,32 @@ var userInput = prompt("Do you wish to take a Rock, some Paper or a Pair of Scis
 var userChoice = userInput.toLowerCase();
 console.log(userChoice);
 
+var acceptableChoices = ["rock", "paper", "scissors"];
 var computerChoice = Math.random();
 
+if((acceptableChoices.indexOf(userChoice)) === -1) {
+  alert("Invalid Selection")
+} else {
+
 if(computerChoice < 0.34) {
-  computerChoice = "Rock!";
+  computerChoice = "rock";
 }
 
 else if(computerChoice >= 0.67) {
-  computerChoice = "Scissors!";
+  computerChoice = "scissors";
 }
 
 else {
-  computerChoice = "Paper!";
+  computerChoice = "paper";
 }
 console.log(computerChoice);
 
 var compare = function(userChoice, computerChoice) {
-  console.log("compare");
   if (userChoice === computerChoice) {
     return "It is a tie!!!"
   }
 
-  else if(userChoice === "rock") {
+  else if(userChoice == "rock") {
     if(computerChoice === "scissors") {
       return "Rock wins for you! This time..."
     }
@@ -53,3 +57,8 @@ var compare = function(userChoice, computerChoice) {
 }
 
 console.log(compare(userChoice,computerChoice));
+$(document).ready(function(){
+  $('#result').append("<p>"+compare(userChoice,computerChoice)+"</p>");
+});
+
+};
