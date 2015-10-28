@@ -2,7 +2,7 @@ var txt = document.querySelector('#resultText');
 var userLives = 0;
 var compLives = 0;
 
-function choice (userChoice){
+function choice (userChoice) {
   var result;
   var computerChoice = Math.random();
   var uChoice = userChoice.target.id;
@@ -15,14 +15,14 @@ var win = '<span> Organic Matter wins!</span>';
 var lose = '<span> Artifical Intelligence wins this round!</span>';
 var equality = '<span> TIE!!! Again! I will not stop till I destroy all human life!</span>';
 
-  if(computerChoice == "rock"){
-   if (uChoice == "paper"){result = win;}
-   else if (uChoice == "scissors"){result = lose;}
+  if(computerChoice == "rock") {
+   if (uChoice == "paper") {result = win;}
+   else if (uChoice == "scissors") {result = lose;}
    else {result = equality;}
  }
- else if(computerChoice == "paper"){
-   if (uChoice == "rock"){result = lose;}
-   else if (uChoice == "scissors"){result = win;}
+ else if(computerChoice == "paper") {
+   if (uChoice == "rock") {result = lose;}
+   else if (uChoice == "scissors") {result = win;}
    else {result = equality;}
  }
  else if(computerChoice == "scissors") {
@@ -32,24 +32,24 @@ var equality = '<span> TIE!!! Again! I will not stop till I destroy all human li
  }
 
 var clearColor = setTimeout(function() {
-  userChoice.target.style.background ="none";
+  userChoice.target.style.background ="#43a16f";
 },1000);
 
   if(result == win ) {
-  userChoice.target.style.background ="#57CA67";
+  userChoice.target.style.background ="#ccf8ff";
   clearColor;
   }
 
   else if(result == lose) {
-    userChoice.target.style.background ="#CA5757";
+    userChoice.target.style.background ="#dd4c4c";
     clearColor;
   }
 
   else {
-  txt.style.color="white";userChoice.target.style.background ="white";
+  txt.style.color="white";userChoice.target.style.background ="#f8ffcc";
   }
 
-hearts(result,win,lose);
+hearts(result, win, lose);
 }
 
 function hearts(result, win, lose){
